@@ -1,11 +1,15 @@
-### JDK安装
+# JDK安装
+
 * 解压
-```
+
+  ```text
     mkdir /usr/lib/jvm
     tar -zxvf jdk-8u192-linux-x64.tar.gz -C /usr/lib/jvm
-```
+  ```
+
 * 文件末尾追加如下内容
-```
+
+  ```text
     vim ~/.bashrc
 
     #set oracle jdk environment
@@ -13,12 +17,17 @@
     export JRE_HOME=${JAVA_HOME}/jre
     export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
     export PATH=${JAVA_HOME}/bin:$PATH
-```
+  ```
+
 * 使环境变量生效
-```
+
+  ```text
     source ~/.bashrc
-```
+  ```
+
 * 验证
-```
+
+  ```text
     java -version
-```
+  ```
+

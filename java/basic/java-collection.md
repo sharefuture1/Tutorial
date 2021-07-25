@@ -1,54 +1,54 @@
-# 目录
-* [0. Java集合框架历史](#Java集合框架历史)
-* [1. Java集合概述](#1.Java集合概述)
-    * [Collection集合概述](Collection集合概述)
-    * [Map集合概述](#Map集合概述)
-    * [Concurrent包下的集合概述](#Concurrent包下的集合概述)
+# java-collection
 
-* [2. Java集合详解](#2.Java集合详解)
-    * [Collection集合下常用实现类详解](#Collection集合下常用实现类详解)
-	* [Iterator接口源码解析](#Iterator接口源码解析)
-        * [Collection接口源码解析](#Collection接口源码解析)
-        * [List接口源码解析](#List接口源码解析)
-            * [AbstractCollection抽象类源码解析](#AbstractCollection抽象类源码解析)
-                * [AbstractList抽象类源码解析](#AbstractList源码解析)
-		            * [ArrayList源码解析和使用](#ArrayList源码解析和使用)
-                    * [Vector源码解析和使用](#Vector源码解析和使用)
-                        * [Stack源码解析和使用](#Stack源码解析和使用)
-                    * [AbstractSequentialList抽象类源码解析](#AbstractSequentialList抽象类源码解析)
-                        * [LinkedList源码解析和使用](#LinkedList源码解析和使用)
-        * [Set接口源码解析](#Set接口源码解析)
-            * [AbstractSet源码解析](#AbstractSet源码解析)
-                * [HashSet源码解析和使用](#HashSet源码解析和使用)
-                * [TreeSet源码解析和使用](#TreeSet源码解析和使用)
-        * [Queue接口源码解析](#Queue接口源码解析)
-            * [Deque接口源码解析](#Deque接口源码解析)
-                * [LinkedList使用](#LinkedList使用)
-    * [Map集合下常用实现类详解](#Map集合下常用实现类详解)
-        * [AbstractMap接口源码解析](#AbstractMap接口源码解析)
-            * [HashMap源码解析和使用](#HashMap源码解析和使用)
-            * [WeakHashMap源码解析和使用](#WeakHashMap源码解析和使用)
-            * [TreeMap源码解析和使用](#TreeMap源码解析和使用)
-        * [Hashtable源码解析和使用](#Hashtable源码解析和使用)
-    * [Concurrent包下常用实现类详解](#Concurrent包下常用实现类详解)
+## 目录
 
-* [3. 集合框架中体现的设计模式和编程规范](#3.集合框架中体现的设计模式和编程规范)
-    * [迭代器模式](#迭代器模式)
-    * [适配器模式](#适配器模式)
+* [0. Java集合框架历史](java-collection.md#Java集合框架历史)
+* [1. Java集合概述](java-collection.md#1.Java集合概述)
+  * [Collection集合概述](https://github.com/sharefuture1/Tutorial/tree/7549352525744252ab484c3dcf85953b82b413ec/java/basic/Collection集合概述/README.md)
+  * [Map集合概述](java-collection.md#Map集合概述)
+  * [Concurrent包下的集合概述](java-collection.md#Concurrent包下的集合概述)
+* [2. Java集合详解](java-collection.md#2.Java集合详解)
+  * [Collection集合下常用实现类详解](java-collection.md#Collection集合下常用实现类详解)
+  * [Iterator接口源码解析](java-collection.md#Iterator接口源码解析)
+    * [Collection接口源码解析](java-collection.md#Collection接口源码解析)
+    * [List接口源码解析](java-collection.md#List接口源码解析)
+      * [AbstractCollection抽象类源码解析](java-collection.md#AbstractCollection抽象类源码解析)
+        * [AbstractList抽象类源码解析](java-collection.md#AbstractList源码解析)
+          * [ArrayList源码解析和使用](java-collection.md#ArrayList源码解析和使用)
+          * [Vector源码解析和使用](java-collection.md#Vector源码解析和使用)
+            * [Stack源码解析和使用](java-collection.md#Stack源码解析和使用)
+          * [AbstractSequentialList抽象类源码解析](java-collection.md#AbstractSequentialList抽象类源码解析)
+            * [LinkedList源码解析和使用](java-collection.md#LinkedList源码解析和使用)
+    * [Set接口源码解析](java-collection.md#Set接口源码解析)
+      * [AbstractSet源码解析](java-collection.md#AbstractSet源码解析)
+        * [HashSet源码解析和使用](java-collection.md#HashSet源码解析和使用)
+        * [TreeSet源码解析和使用](java-collection.md#TreeSet源码解析和使用)
+    * [Queue接口源码解析](java-collection.md#Queue接口源码解析)
+      * [Deque接口源码解析](java-collection.md#Deque接口源码解析)
+        * [LinkedList使用](java-collection.md#LinkedList使用)
+  * [Map集合下常用实现类详解](java-collection.md#Map集合下常用实现类详解)
+    * [AbstractMap接口源码解析](java-collection.md#AbstractMap接口源码解析)
+      * [HashMap源码解析和使用](java-collection.md#HashMap源码解析和使用)
+      * [WeakHashMap源码解析和使用](java-collection.md#WeakHashMap源码解析和使用)
+      * [TreeMap源码解析和使用](java-collection.md#TreeMap源码解析和使用)
+    * [Hashtable源码解析和使用](java-collection.md#Hashtable源码解析和使用)
+  * [Concurrent包下常用实现类详解](java-collection.md#Concurrent包下常用实现类详解)
+* [3. 集合框架中体现的设计模式和编程规范](java-collection.md#3.集合框架中体现的设计模式和编程规范)
+  * [迭代器模式](java-collection.md#迭代器模式)
+  * [适配器模式](java-collection.md#适配器模式)
+* [4. 其他](java-collection.md#4.其他)
+  * [fail-fast机制](java-collection.md#fail-fast机制)
+  * [MarkerInterface](java-collection.md#Marker-Interface)
+  * [Collections工具类-操作集合](java-collection.md)
+  * [Arrays工具类-操作数组](java-collection.md)
+* [5. 圈重点](java-collection.md#5.圈重点)
+* [参考资料](java-collection.md#参考资料)
 
-* [4. 其他](#4.其他)
-    * [fail-fast机制](#fail-fast机制)
-    * [MarkerInterface](#Marker-Interface)
-    * [Collections工具类-操作集合]()
-    * [Arrays工具类-操作数组]()
-* [5. 圈重点](#5.圈重点)
-
-* [参考资料](#参考资料)
-
-# 0.Java集合框架历史
+## 0.Java集合框架历史
 
 摘自Wikipedia [Java Collection Framework](https://en.wikipedia.org/wiki/Java_collections_framework):
-```
+
+```text
 Collection implementations in pre-JDK 1.2 versions of the Java platform included few data structure classes, but did not contain a collections framework.[3] The standard methods for grouping Java objects were via the array, the Vector, and the Hashtable classes, which unfortunately were not easy to extend, and did not implement a standard member interface.[4]
 
 To address the need for reusable collection data structures, several independent frameworks were developed,[3] the most used being Doug Lea's Collections package,[5] and ObjectSpace Generic Collection Library (JGL),[6] whose main goal was consistency with the C++ Standard Template Library (STL).[7]
@@ -56,46 +56,54 @@ To address the need for reusable collection data structures, several independent
 
 可知，早期的Java Group通过Array, Vector, HashTable这些类来实现，但是他们难扩展，后期大神们创建了独立的Java Data Structure Framework，并且在日后这些framework被build进入JDK中，慢慢形成了Java Collection Framework。
 
+## 1.Java集合概述
 
-# 1.Java集合概述
-Java的集合类位于java.util.*包下，大体分为2类，Collection和Map，另外就是2个工具类。Concurrent是jdk1.5引入的（在这之前java语言内置对多线程的支持比较有限），主要代码由Doug Lea完成。
+Java的集合类位于java.util.\*包下，大体分为2类，Collection和Map，另外就是2个工具类。Concurrent是jdk1.5引入的（在这之前java语言内置对多线程的支持比较有限），主要代码由Doug Lea完成。
 
-
-## Collection集合概述
+### Collection集合概述
 
 1. 概述
+2. Collection包含3个分支
 
-* Collection包含3个分支
-    ```
-    AbstractCollection是抽象类，实现了部分Collection中的API，如contains，toArray, remove, toString等方法。
-    ```
-    * Queue
-        ```
-        队列是一种特殊的线性表，允许在表的头部进行删除操作，在表的尾部进行插入操作。有2个继承接口，BlockingQueue(阻塞队列)和Deque(双向队列)。AbstractQueue是抽象类，实现了Queue中的大部分API，常见实现类有LinkedQueue。
-        ```
-    * List
-        ```
-        List是一个有序的队列，每个元素都有它的索引，第一个元素的索引值为0。AbstractList是抽象类，实现了List中的大部分API，常见实现类有LinkedList, ArrayList, Vector, Stack。
-        ```
-    * Set
-        ```
-        Set是一个不允许有重复元素的集合。 AbstractSet是抽象类，实现了Set中的大部分API，常见的实现类有HashSet, TreeSet。
-        ```
+   ```text
+     AbstractCollection是抽象类，实现了部分Collection中的API，如contains，toArray, remove, toString等方法。
+   ```
 
-## Map集合概述
+   * Queue
+
+     ```text
+       队列是一种特殊的线性表，允许在表的头部进行删除操作，在表的尾部进行插入操作。有2个继承接口，BlockingQueue(阻塞队列)和Deque(双向队列)。AbstractQueue是抽象类，实现了Queue中的大部分API，常见实现类有LinkedQueue。
+     ```
+
+   * List
+
+     ```text
+       List是一个有序的队列，每个元素都有它的索引，第一个元素的索引值为0。AbstractList是抽象类，实现了List中的大部分API，常见实现类有LinkedList, ArrayList, Vector, Stack。
+     ```
+
+   * Set
+
+     ```text
+       Set是一个不允许有重复元素的集合。 AbstractSet是抽象类，实现了Set中的大部分API，常见的实现类有HashSet, TreeSet。
+     ```
+
+### Map集合概述
+
 1. 概述
-* Map包含1个分支
-    ```
-    Map是一个映射接口，即key-value的键值对。AbstractMap是抽象类，实现了Map中的大部分API，HashMap, TreeMap, WeakHashMap是其实现类。
-    ```
+2. Map包含1个分支
 
-2. 源码阅读
-`接口定义`
-```java
-public interface Map<K,V>
-```
+   ```text
+     Map是一个映射接口，即key-value的键值对。AbstractMap是抽象类，实现了Map中的大部分API，HashMap, TreeMap, WeakHashMap是其实现类。
+   ```
+
+3. 源码阅读 `接口定义`
+
+   ```java
+   public interface Map<K,V>
+   ```
 
 `常用方法`
+
 ```java
 abstract void                 clear()
 abstract boolean              containsKey(Object key)
@@ -112,7 +120,8 @@ abstract V                    remove(Object key)
 abstract int                  size()
 abstract Collection<V>        values()
 ```
-```
+
+```text
 Map 是一个键值对(key-value)映射接口。Map映射中不能包含重复的键；每个键最多只能映射到一个值。
 Map 接口提供三种collection 视图，允许以键集(keySet())、值集(values())或键-值(entrySet())映射关系集的形式查看某个映射的内容。
 Map 映射顺序。有些实现类，可以明确保证其顺序，如 TreeMap；另一些映射实现则不保证顺序，如 HashMap 类。
@@ -121,42 +130,53 @@ Map 的实现类应该提供2个“标准的”构造方法：第一个，void�
 
 [Map的三种Collection视图例子 MapTest01.java](https://github.com/zhonghuasheng/JAVA/blob/master/basic/src/main/java/com/zhonghuasheng/basic/util/MapTest01.java)
 
-## Concurrent包下的集合概述
+### Concurrent包下的集合概述
 
 1. 概述
-* Concurrent主要有3个package组成
-    * java.util.concurrent
-        ```
-        提供大部分关于并发的接口和类，如BlockingQueue, ConcurrentHashMap, ExecutorService等
-        ```
-    * java.util.concurrent.atomic
-        ```
-        提供所有的原子类操作，如AtomicInteger, AtomicLong等
-        ```
-    * java.util.concurrent.locks
-        ```
-        提供锁相关的类，如Lock, ReentrantLock, ReadWriteLock, Confition等
-        ```
+2. Concurrent主要有3个package组成
+   * java.util.concurrent
 
-# 2.Java集合详解
-## Collection集合下常用实现类详解
-### Iterator接口源码解析
+     ```text
+       提供大部分关于并发的接口和类，如BlockingQueue, ConcurrentHashMap, ExecutorService等
+     ```
+
+   * java.util.concurrent.atomic
+
+     ```text
+       提供所有的原子类操作，如AtomicInteger, AtomicLong等
+     ```
+
+   * java.util.concurrent.locks
+
+     ```text
+       提供锁相关的类，如Lock, ReentrantLock, ReadWriteLock, Confition等
+     ```
+
+## 2.Java集合详解
+
+### Collection集合下常用实现类详解
+
+#### Iterator接口源码解析
+
 `总结`
-```
+
+```text
 iterator.remove()方法必须要在调用了next()方法之后，否则会报IllegalStateException。
 if the next method has not yet been called, or the remove method has already been called after the last call to the next method
 ```
 
 `常用方法`
+
 ```java
 boolean hasNext()
 E next()
 void remove()
 ```
 
-### Collection接口源码解析
+#### Collection接口源码解析
 
 `接口定义`：
+
 ```java
 /* 说明：
 Collection集合用于存Object的，不支持存储基础数据类型，这是由Collection接口的定义决定的： Collection<E>
@@ -164,10 +184,10 @@ Collection集合用于存Object的，不支持存储基础数据类型，这是�
 List<int> ints = new ArrayList<int>();
 */
 public interface Collection<E> extends Iterable<E>
-
 ```
 
 `常用方法`
+
 ```java
 abstract boolean         add(E object)
 // addAll参数为E或E的子类
@@ -193,15 +213,17 @@ abstract <T> T[]         toArray(T[] array)
 abstract Object[]        toArray()
 ```
 
-### List接口源码解析
+#### List接口源码解析
+
 `总结`
-```
+
+```text
 List是有序的，支持随机访问（通过索引下标访问）
 List允许重复的值（原因是它的数据存储方式）
-
 ```
 
 `常用方法`
+
 ```java
 boolean add(E)
 void add(int, E)
@@ -240,12 +262,16 @@ int nextIndex()
 int previousIndex()
 ```
 
-#### AbstractCollection抽象类源码解析
+**AbstractCollection抽象类源码解析**
+
 `总结`
-```
+
+```text
 AbstractCollection是个抽象类，继承自Collection接口，并实现了其中的方法，同时添加了toString()方法
 ```
+
 `常用方法`
+
 ```java
 private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8; // 减8的原因是某些VMs存储了数据的header
 private static <T> T[] finishToArry(T[] r, Iterator<?> it) // 用于将集合转换为数组
@@ -266,13 +292,16 @@ T[] toArray(T[])
 String toString() // 迭代遍历集合，通过StringBuilder接收组合输出
 ```
 
-#### AbstractList源码解析
+**AbstractList源码解析**
+
 `总结`
-```
+
+```text
 AbstractList中有Itr(继承Iterator)和ListItr(继承ListIterator)两个内部类
 在迭代遍历过程中，如果出现对集合的写的行为（list.remove(obj)），会报出ConcurrentModificationException。
 AbstractList中仍然没有实现add方法
 ```
+
 ```java
     // list调用remove方法会导致modCount的值改变
     private void fastRemove(int index) {
@@ -301,10 +330,10 @@ AbstractList中仍然没有实现add方法
     }
 ```
 
-##### ArrayList源码解析和使用
-`总结`
-1. ArrayList是一个数据集合，相当于一个动态数组(Object[] elementData)。与Java中的数据相比，它的容量能动态增长，默认长度时10(DEFAULT_CAPACITY)，扩容时新的容量=原始容量 + 原始容量>>1
-2. ArrayList实现了RandomAccess接口（Marker Interface），又由于其数据以数据存储，因此支持快速随机查找，但是修改和删除效率不高
+**ArrayList源码解析和使用**
+
+`总结` 1. ArrayList是一个数据集合，相当于一个动态数组\(Object\[\] elementData\)。与Java中的数据相比，它的容量能动态增长，默认长度时10\(DEFAULT\_CAPACITY\)，扩容时新的容量=原始容量 + 原始容量&gt;&gt;1 2. ArrayList实现了RandomAccess接口（Marker Interface），又由于其数据以数据存储，因此支持快速随机查找，但是修改和删除效率不高
+
 ```java
 // Collections中通过RandomAccess接口判断
     public static <T>
@@ -315,49 +344,62 @@ AbstractList中仍然没有实现add方法
             return Collections.iteratorBinarySearch(list, key);
     }
 ```
-3. ArrayList不是线程安全的，Vertor是线程安全的（其绝大部分方法都加了synchronized关键字），可在多线程下使用CopyOnWriteArryList。
 
-##### Vector源码解析和使用
+1. ArrayList不是线程安全的，Vertor是线程安全的（其绝大部分方法都加了synchronized关键字），可在多线程下使用CopyOnWriteArryList。
+
+**Vector源码解析和使用**
+
 `总结`
+
 ```java
 public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, java.io.Serializable
 ```
+
 1. Vector是一个矢量队列，支持比本的添加、修改、删除、遍历等功能
-2. Vector实现了RandomAccess接口，即支持随机访问功能（get(int index)）
+2. Vector实现了RandomAccess接口，即支持随机访问功能（get\(int index\)）
 3. Vector中的public API都是加了synchronized关键字来保证线程安全
 
-##### Stack源码解析和使用
+**Stack源码解析和使用**
+
 `总结`
-```
+
+```text
 Stack是栈，特性是先进后出(FILO, First In Last Out)
 Stack是继承自Vector，也是通过数据实现的
 ```
 
 `常用方法`
+
 ```java
 Object push(Object element) // 把对象压入堆栈
 Object pop() // 移除堆栈顶部对象，并作为此方法的返回值返回该对象
 Object peek() // 查看堆栈顶部的对象，但不从堆栈中移除它
 ```
 
-#### AbstractSequentialList抽象类源码解析
+**AbstractSequentialList抽象类源码解析**
+
 `总结`
-```
+
+```text
 这个抽象类没什么特别
 ```
 
-##### LinkedList源码解析和使用
+**LinkedList源码解析和使用**
+
 `总结`
+
 ```java
 public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Cloneable, Serializable {}
 ```
-```
+
+```text
 LinkedList实现了Deque接口，能对它进行双向列表操作，也就是说顺序访问会非常高效，随机访问效率比较低
 LinkedList不是线程安全的，可以通过List list = Collections.synchronizedList(new LinkedList(...))来转换，不过LinkedList的数据类型会丢失
 LinkedList中使用Node对象来存储数据
 ```
 
 `常用方法`
+
 ```java
 boolean add(E element) // offer属于 offer in interface Deque<E>, add 属于 add in interface Collection<E>
 void(int index, E element) // 判断index==size，=就linkLast, or linkBefore
@@ -390,6 +432,7 @@ E set(int index, E element) // 替换指定位置的元素
 ```
 
 LinkedList可以作为FIFO的队列，使用如下方法：
+
 ```java
 // Queue
 boolean add(e) // add比offer的区别在于add时如果capacity超了，会报错，而offer不会
@@ -401,6 +444,7 @@ E peek() // 返回队列的第一个元素，不删除，如果队列为空，�
 ```
 
 LinkedList也可以作为FILO的栈，使用如下方法：
+
 ```java
 push(e)
 pop()
@@ -408,6 +452,7 @@ peek()
 ```
 
 `源码解析`
+
 ```java
     private static class Node<E> {
         E item;
@@ -421,6 +466,7 @@ peek()
         }
     }
 ```
+
 LinkedList在内部定义了一个叫做Node类型的静态内部类，Node就是一个节点，链表中的节点，有3个属性。
 
 ```java
@@ -451,10 +497,11 @@ void linkLast(E e) {
 ...
 ```
 
-### Set接口源码解析
+#### Set接口源码解析
 
 `总结`
-```
+
+```text
 Set是继承自Collection的接口，是一个不允许有重复元素的结合。
 AbstractSet是一个抽象类，继承自AbstractCollection，AbstractCollection实现了Set中的绝大部分函数
 HashSet和TreeSet是Set的两个实现类
@@ -462,11 +509,12 @@ HashSet和TreeSet是Set的两个实现类
     TreeSet依赖TreeMap，它实际上是通过TreeMap实现的，TreeSet中的元素是有序的
 ```
 
-#### AbstractSet源码解析
+**AbstractSet源码解析**
 
 AbstractSet没有对Set做多少的实现，其继承了AbstractCollection
 
 `源码解析`
+
 ```java
     public boolean equals(Object o) {
         if (o == this)
@@ -487,15 +535,18 @@ AbstractSet没有对Set做多少的实现，其继承了AbstractCollection
     }
 ```
 
-##### HashSet源码解析和使用
+**HashSet源码解析和使用**
+
 `总结`
-```
+
+```text
 HashSet是一个没有重复元素的集合，它是由HashMap实现的（HashMap中key不能重复），不保证元素的顺序，而且HashSet允许使用null元素。
 HashSet是非同步的，因此如果多线程同时访问一个HashSet，而其中至少有一个线程修改了该HashSet夺得话，那么需要保持外部同步，通常可以对该Set的对象封装来完成同步操作，也可以使用Collections.synchronizedSet方法来完成。
 HashSet是通过Iterator迭代遍历的
 ```
 
 `常用方法`
+
 ```java
 HashSet()
 HashSet(int initialCapacity)
@@ -513,6 +564,7 @@ int size()
 ```
 
 `源码解析`
+
 ```java
     private transient HashMap<E,Object> map;
 
@@ -660,17 +712,21 @@ int size()
     }
 ```
 
-##### TreeSet源码解析和使用
+**TreeSet源码解析和使用**
+
 `总结`
+
 ```java
 public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Cloneable, Serializable {}
 ```
-```
+
+```text
 TreeSet是一个有序并且没有重复的Set集合，它是通过TreeMap实现的
 TreeSet实现了NavigableSet接口，因此其支持集合的导航方法，如lower（返回小于）, floor（返回小于等于）, ceiling（返回大于等于）, higher（返回大于），如果不存在这样的元素，则返回null
 ```
 
 `源码解析`
+
 ```java
     // The backing map. 数据存储在这个对象中
     private transient NavigableMap<E, Object> m;
@@ -740,9 +796,10 @@ TreeSet实现了NavigableSet接口，因此其支持集合的导航方法，如l
     }
 ```
 
-### Queue接口源码解析
+#### Queue接口源码解析
 
 `源码分析`
+
 ```java
 public interface Queue<E> extends Collection<E> {
     boolean add(e) // add比offer的区别在于add时如果capacity超了，会报错，而offer不会
@@ -754,19 +811,23 @@ public interface Queue<E> extends Collection<E> {
 }
 ```
 
-### Deque接口源码解析
+#### Deque接口源码解析
 
 `总结`
-```
+
+```text
 双向队列，继承自Queue接口，同时提供了丰富的操作队列的方法，具体可参考LinkedList源码分析
 ```
 
-##### LinkedList使用
-Go to here [LinkedList源码解析和使用](#LinkedList源码解析和使用)
+**LinkedList使用**
 
-## Map集合下常用实现类详解
+Go to here [LinkedList源码解析和使用](java-collection.md#LinkedList源码解析和使用)
+
+### Map集合下常用实现类详解
+
 `总结`
-```
+
+```text
 Map是一个键值对的接口，Map<K, V>
 AbstractMap实现了Map接口，但是几乎没有实现Map中的方法，但是却定义了一些常用的方法
 SortedMap继承自Map接口，SortedMap中的内容是排序了的键值对，排序的方法是通过比较器（Comparator）
@@ -776,7 +837,9 @@ HashMap继承自AbstractMap，没有实现SortedMap，因此，HashMap不是有�
 Hashtable没有继承自AbstractMap，继承的是Dictionary，实现了Map接口，因此，Hashtable是无序的键值对。Hashtable不允许插入key或者value为null的元素，Hashtable的方法加了synchronized关键字，保证了线程的安全。
 WeakhashMap继承自AbstractMap，大致来说它与HashMap的键类型不同，WeakHashMap使用的是“弱键”（内存不足时会被GC收掉）
 ```
+
 `源码分析`
+
 ```java
 void clear();
 boolean containsKey(Object key);
@@ -802,10 +865,12 @@ interface Entry<K,V> {
 }
 ```
 
-#### AbstractMap接口源码解析
+**AbstractMap接口源码解析**
+
 AbstractMap实现了Map接口，实现了一些通用的方法
 
 `源码解析`
+
 ```java
 // 巧妙的写法
 private static boolean eq(Object o1, Object o2) {
@@ -813,13 +878,16 @@ private static boolean eq(Object o1, Object o2) {
 }
 ```
 
-##### HashMap源码解析和使用
+**HashMap源码解析和使用**
+
 `定义`
+
 ```java
 public class HashMap<K, V> extends AbstractMap<K, V> implements Map<K, V>, Cloneable, Serializable {}
 ```
 
 `构造函数`
+
 ```java
 public HashMap() {
     this(DEFAULT_INITIAL_CAPACITY, DEFAULT_LOAD_FACTOR); // initial capacity=16 load factor=0.75
@@ -835,6 +903,7 @@ public HashMap(Map<? extends K, ? extends V> m) {}
 ```
 
 `public method`
+
 ```java
 void clear()
 Object clone()
@@ -853,6 +922,7 @@ Collection<V> values()
 ```
 
 `源码解析`
+
 ```java
     // 数据存储在这里，一个叫table的变量中
     transient Entry<K,V>[] table = (Entry<K,V>[]) EMPTY_TABLE;
@@ -953,7 +1023,8 @@ Collection<V> values()
 ```
 
 `总结`
-```
+
+```text
 HashMap继承于AbstractMap类，实现了Map接口。Map是"key-value键值对"接口，AbstractMap实现了"键值对"的通用函数接口。
 HashMap是通过"拉链法"实现的哈希表。它包括几个重要的成员变量：table, size, threshold, loadFactor, modCount。
     table是一个Entry[]数组类型，而Entry实际上就是一个单向链表。哈希表的"key-value键值对"都是存储在Entry数组中的。
@@ -963,12 +1034,16 @@ HashMap是通过"拉链法"实现的哈希表。它包括几个重要的成员�
 　　modCount是用来实现fail-fast机制的。
 ```
 
-##### WeakHashMap源码解析和使用
+**WeakHashMap源码解析和使用**
+
 `定义`
+
 ```java
 public class WeakhashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {}
 ```
+
 `构造函数和HashMap类似`
+
 ```java
 public WeakHashMap() {
     this(DEFAULT_INITIAL_CAPACITY, DEFAULT_LOAD_FACTOR);
@@ -984,6 +1059,7 @@ public WeakHashMap(Map<? extends K, ? extends V> m) {}
 ```
 
 `重要变量`
+
 ```java
 private static final int DEFAULT_INITIAL_CAPACITY = 16;
 private static final int MAXIMUM_CAPACITY = 1 << 30;
@@ -997,7 +1073,8 @@ int modCount;
 ```
 
 `总结`
-```
+
+```text
 WeakHashMap继承于AbstractMap，并且实现了Map接口。
 WeakHashMap是哈希表，但是它的键是"弱键"。WeakHashMap中保护几个重要的成员变量：table, size, threshold, loadFactor, modCount, queue。
     table是一个Entry[]数组类型，而Entry实际上就是一个单向链表。哈希表的"key-value键值对"都是存储在Entry数组中的。
@@ -1013,8 +1090,10 @@ WeakHashMap和HashMap都是通过"拉链法"实现的散列表。它们的源码
     另外，理解上面思想的重点是通过 expungeStaleEntries() 函数去理解。
 ```
 
-##### TreeMap源码解析和使用
+**TreeMap源码解析和使用**
+
 `构造方法`
+
 ```java
 public TreeMap() {
     comparator = null;
@@ -1033,7 +1112,8 @@ public TreeMap(SortedMap<K, ? extends V> m) {}
 ```
 
 `总结`
-```
+
+```text
 TreeMap 是一个有序的key-value集合，它是通过红黑树实现的。
 TreeMap 继承于AbstractMap，所以它是一个Map，即一个key-value集合。
 TreeMap 实现了NavigableMap接口，意味着它支持一系列的导航方法。比如返回有序的key集合。
@@ -1044,13 +1124,17 @@ TreeMap基于红黑树（Red-Black tree）实现。该映射根据其键的自�
 TreeMap的基本操作 containsKey、get、put 和 remove 的时间复杂度是 log(n) 。
 另外，TreeMap是非同步的。 它的iterator 方法返回的迭代器是fail-fastl的
 ```
-##### Hashtable源码解析和使用
+
+**Hashtable源码解析和使用**
+
 `定义`
+
 ```java
 public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Cloneable, java.io.Serializable {}
 ```
 
 `构造函数`
+
 ```java
 public Hashtable() {
     this(11, 0.75f);
@@ -1066,7 +1150,8 @@ public Hashtable(Map<? extends K, ? extends V> t) {}
 ```
 
 `总结`
-```
+
+```text
 和HashMap一样，Hashtable 也是一个散列表，它存储的内容是键值对(key-value)映射。
 Hashtable 继承于Dictionary，实现了Map、Cloneable、java.io.Serializable接口。
 Hashtable 的函数都是同步的，这意味着它是线程安全的。它的key、value都不可以为null。此外，Hashtable中的映射不是有序的。
@@ -1074,13 +1159,14 @@ Hashtable 的函数都是同步的，这意味着它是线程安全的。它的k
 Hashtable 的实例有两个参数影响其性能：初始容量 和 加载因子。容量 是哈希表中桶 的数量，初始容量 就是哈希表创建时的容量。注意，哈希表的状态为 open：在发生“哈希冲突”的情况下，单个桶会存储多个条目，这些条目必须按顺序搜索。加载因子 是对哈希表在其容量自动增加之前可以达到多满的一个尺度。初始容量和加载因子这两个参数只是对该实现的提示。关于何时以及是否调用 rehash 方法的具体细节则依赖于该实现。
 通常，默认加载因子是 0.75, 这是在时间和空间成本上寻求一种折衷。加载因子过高虽然减少了空间开销，但同时也增加了查找某个条目的时间（在大多数 Hashtable 操作中，包括 get 和 put 操作，都反映了这一点）。
 ```
-## Concurrent包下常用实现类详解
 
-# 3.集合框架中体现的设计模式和编程规范
+### Concurrent包下常用实现类详解
 
-## 迭代器模式
+## 3.集合框架中体现的设计模式和编程规范
 
-Collection 继承了 Iterable 接口，其中的 iterator() 方法能够产生一个 Iterator 对象，通过这个对象就可以迭代遍历 Collection 中的元素。
+### 迭代器模式
+
+Collection 继承了 Iterable 接口，其中的 iterator\(\) 方法能够产生一个 Iterator 对象，通过这个对象就可以迭代遍历 Collection 中的元素。
 
 从 JDK 1.5 之后可以使用 foreach 方法来遍历实现了 Iterable 接口的聚合对象。
 
@@ -1093,37 +1179,41 @@ for (String item : list) {
 }
 ```
 
-## 适配器模式
+### 适配器模式
 
-java.util.Arrays#asList() 可以把数组类型转换为 List 类型。
+java.util.Arrays\#asList\(\) 可以把数组类型转换为 List 类型。
 
 ```java
 @SafeVarargs
 public static <T> List<T> asList(T... a)
 ```
 
-应该注意的是 asList() 的参数为泛型的变长参数，不能使用基本类型数组作为参数，只能使用相应的包装类型数组。
+应该注意的是 asList\(\) 的参数为泛型的变长参数，不能使用基本类型数组作为参数，只能使用相应的包装类型数组。
 
 ```java
 Integer[] arr = {1, 2, 3};
 List list = Arrays.asList(arr);
 ```
 
-也可以使用以下方式调用 asList()：
+也可以使用以下方式调用 asList\(\)：
 
 ```java
 List list = Arrays.asList(1, 2, 3);
 ```
 
-# 4.其他
-## fail-fast机制
-## Marker Interface
+## 4.其他
 
-# 5.圈重点
-* Collection集合用于存Object的，不支持存储基础数据类型，这是由Collection接口的定义决定的： Collection<E>
-* iterator.remove()方法必须要在调用了next()方法之后，否则会报IllegalStateException
+### fail-fast机制
 
+### Marker Interface
 
-# 参考资料
-* 集合框架图 https://img-blog.csdn.net/20160124221843905
-* Java集合框架概述 https://www.cnblogs.com/xiaoxi/p/6089984.html
+## 5.圈重点
+
+* Collection集合用于存Object的，不支持存储基础数据类型，这是由Collection接口的定义决定的： Collection
+* iterator.remove\(\)方法必须要在调用了next\(\)方法之后，否则会报IllegalStateException
+
+## 参考资料
+
+* 集合框架图 [https://img-blog.csdn.net/20160124221843905](https://img-blog.csdn.net/20160124221843905)
+* Java集合框架概述 [https://www.cnblogs.com/xiaoxi/p/6089984.html](https://www.cnblogs.com/xiaoxi/p/6089984.html)
+

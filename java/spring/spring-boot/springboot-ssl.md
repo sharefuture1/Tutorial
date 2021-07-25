@@ -3,17 +3,20 @@
 > 测试时使用的是1.5.x的版本，2.x的版本会有一些类的写法不一样
 
 ## 目录
-* [生成SSL](#生成SSL)
-* [SpringBoot中配置SSL](#SpringBoot中配置SSL)
-* [参考文章](#参考文章)
+
+* [生成SSL](springboot-ssl.md#生成SSL)
+* [SpringBoot中配置SSL](springboot-ssl.md#SpringBoot中配置SSL)
+* [参考文章](springboot-ssl.md#参考文章)
 
 ### 生成SSL
-```shell
+
+```text
 keytool -genkey -alias test -keyalg RSA -keystore /home/user/test.keystore
 ```
 
 ### SpringBoot中配置SSL
-```properties
+
+```text
 server.port=8443
 server.ssl.key-store=classpath:ssl/test.keystore #classpath是springboot中的resources所在的路径
 server.ssl.key-store-password=testpwd
@@ -24,9 +27,10 @@ server.ssl.keyAlias=test
 启动项目，验证https
 
 ## 配置http自动跳转https
-参考网上的写法会有个问题，http的post请求会被跳转为https的get请求，报错信息是Get方法不被支持。如下是我使用的解决方案：
-1. 配置接收http请求和开通8080端口
-   ```java
+
+参考网上的写法会有个问题，http的post请求会被跳转为https的get请求，报错信息是Get方法不被支持。如下是我使用的解决方案： 1. 配置接收http请求和开通8080端口
+
+```java
     @SpringBootApplication
     public class Application {
 
@@ -53,9 +57,11 @@ server.ssl.keyAlias=test
             return connector;
         }
     }
-   ```
-2. 添加一个HttpsFilter用来将Http请求转换为Https请求
-    ```java
+```
+
+1. 添加一个HttpsFilter用来将Http请求转换为Https请求
+
+   ```java
     import org.springframework.beans.factory.annotation.Value;
     import org.springframework.stereotype.Component;
 
@@ -101,8 +107,10 @@ server.ssl.keyAlias=test
         public void destroy() {
         }
     }
-    ```
+   ```
 
 ## 参考文章
+
 * [Springboot配置使用ssl，使用https](https://www.cnblogs.com/duanxz/p/9155509.html)
 * [Http 重定向到Https,post请求被强制转换为get请求的解决方案](https://blog.csdn.net/u011242657/article/details/80114074)
+

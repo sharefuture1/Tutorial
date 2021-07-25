@@ -1,64 +1,67 @@
-## 目录
-* [一、数据类型](#一数据类型)
-    * [基本类型](#基本类型)
-    * [包装类型](#包装类型)
-    * [缓存池](#缓存池)
-* [二、String](#二string)
-    * [概览](#概览)
-    * [不可变的好处](#不可变的好处)
-    * [String, StringBuffer and StringBuilder](#string,-stringbuffer-and-stringbuilder)
-    * [String Pool](#string-pool)
-    * [new String("abc")](#new-string"abc")
-* [三、运算](#三运算)
-    * [参数传递](#参数传递)
-    * [float 与 double](#float-与-double)
-    * [隐式类型转换](#隐式类型转换)
-    * [switch](#switch)
-* [四、继承](#四继承)
-    * [访问权限](#访问权限)
-    * [抽象类与接口](#抽象类与接口)
-    * [super](#super)
-    * [重写与重载](#重写与重载)
-* [五、Object 通用方法](#五object-通用方法)
-    * [概览](#概览)
-    * [equals()](#equals)
-    * [hashCode()](#hashcode)
-    * [toString()](#tostring)
-    * [clone()](#clone)
-* [六、关键字](#六关键字)
-    * [final](#final)
-    * [static](#static)
-* [七、反射](#七反射)
-* [八、异常](#八异常)
-* [九、泛型](#九泛型)
-* [十、注解](#十注解)
-* [十一、特性](#十一特性)
-    * [Java 各版本的新特性](#java-各版本的新特性)
-    * [Java 与 C++ 的区别](#java-与-c-的区别)
-    * [JRE or JDK](#jre-or-jdk)
-    * [Lambda表达式](#Lambda表达式)
-* [参考资料](#参考资料)
+# java-basic
 
-## 面试题
+### 目录
 
-# 一、数据类型
+* [一、数据类型](java-basic.md#一数据类型)
+  * [基本类型](java-basic.md#基本类型)
+  * [包装类型](java-basic.md#包装类型)
+  * [缓存池](java-basic.md#缓存池)
+* [二、String](java-basic.md#二string)
+  * [概览](java-basic.md#概览)
+  * [不可变的好处](java-basic.md#不可变的好处)
+  * [String, StringBuffer and StringBuilder](java-basic.md#string,-stringbuffer-and-stringbuilder)
+  * [String Pool](java-basic.md#string-pool)
+  * \[new String\("abc"\)\]\(\#new-string"abc"\)
+* [三、运算](java-basic.md#三运算)
+  * [参数传递](java-basic.md#参数传递)
+  * [float 与 double](java-basic.md#float-与-double)
+  * [隐式类型转换](java-basic.md#隐式类型转换)
+  * [switch](java-basic.md#switch)
+* [四、继承](java-basic.md#四继承)
+  * [访问权限](java-basic.md#访问权限)
+  * [抽象类与接口](java-basic.md#抽象类与接口)
+  * [super](java-basic.md#super)
+  * [重写与重载](java-basic.md#重写与重载)
+* [五、Object 通用方法](java-basic.md#五object-通用方法)
+  * [概览](java-basic.md#概览)
+  * [equals\(\)](java-basic.md#equals)
+  * [hashCode\(\)](java-basic.md#hashcode)
+  * [toString\(\)](java-basic.md#tostring)
+  * [clone\(\)](java-basic.md#clone)
+* [六、关键字](java-basic.md#六关键字)
+  * [final](java-basic.md#final)
+  * [static](java-basic.md#static)
+* [七、反射](java-basic.md#七反射)
+* [八、异常](java-basic.md#八异常)
+* [九、泛型](java-basic.md#九泛型)
+* [十、注解](java-basic.md#十注解)
+* [十一、特性](java-basic.md#十一特性)
+  * [Java 各版本的新特性](java-basic.md#java-各版本的新特性)
+  * [Java 与 C++ 的区别](java-basic.md#java-与-c-的区别)
+  * [JRE or JDK](java-basic.md#jre-or-jdk)
+  * [Lambda表达式](java-basic.md#Lambda表达式)
+* [参考资料](java-basic.md#参考资料)
 
-## 基本类型
+### 面试题
 
-- byte/8bit
-- char/16bit
-- short/16bit
-- int/32bit
-- float/32bit
-- long/64bit
-- double/64bit
-- boolean/\~
+## 一、数据类型
+
+### 基本类型
+
+* byte/8bit
+* char/16bit
+* short/16bit
+* int/32bit
+* float/32bit
+* long/64bit
+* double/64bit
+* boolean/~
 
 boolean 只有两个值：true、false，可以使用 1 bit 来存储，但是具体大小没有明确规定。JVM 会在编译时期将 boolean 类型的数据转换为 int，使用 1 来表示 true，0 表示 false。JVM 支持 boolean 数组，但是是通过读写 byte 数组来实现的。
 
 1byte=8bit, 8位作为一个字节，字符（char）是Java中的一种基本数据类型，由2个字节组成。在UTF-8编码中，一个英文字符占一个字节，一个中文（含繁体）占3个字节，英文标点占一个字节，中文标点占3个字节；而Unicode编码中英文和中文都是占2个字节，标点也是一样。
 
-## 包装类型
+### 包装类型
 
 基本类型都有对应的包装类型，基本类型与其对应的包装类型之间的赋值使用自动装箱与拆箱完成。
 
@@ -67,12 +70,12 @@ Integer x = 2;     // 装箱
 int y = x;         // 拆箱
 ```
 
-## 缓存池
+### 缓存池
 
-new Integer(123) 与 Integer.valueOf(123) 的区别在于：
+new Integer\(123\) 与 Integer.valueOf\(123\) 的区别在于：
 
-- new Integer(123) 每次都会新建一个对象；
-- Integer.valueOf(123) 会使用缓存池中的对象，多次调用会取得同一个对象的引用。
+* new Integer\(123\) 每次都会新建一个对象；
+* Integer.valueOf\(123\) 会使用缓存池中的对象，多次调用会取得同一个对象的引用。
 
 ```java
 Integer x = new Integer(123);
@@ -89,7 +92,7 @@ Integer d = 200;
 System.out.println(c==d); // false，注意int的取值范围
 ```
 
-valueOf() 方法的实现比较简单，就是先判断值是否在缓存池中，如果在的话就直接返回缓存池的内容。
+valueOf\(\) 方法的实现比较简单，就是先判断值是否在缓存池中，如果在的话就直接返回缓存池的内容。
 
 ```java
 public static Integer valueOf(int i) {
@@ -99,7 +102,7 @@ public static Integer valueOf(int i) {
 }
 ```
 
-在 Java 8 中，Integer 缓存池的大小默认为 -128\~127。
+在 Java 8 中，Integer 缓存池的大小默认为 -128~127。
 
 ```java
 static final int low = -128;
@@ -133,7 +136,7 @@ static {
 }
 ```
 
-编译器会在自动装箱过程调用 valueOf() 方法，因此多个值相同且值在缓存池范围内的 Integer 实例使用自动装箱来创建，那么就会引用相同的对象。
+编译器会在自动装箱过程调用 valueOf\(\) 方法，因此多个值相同且值在缓存池范围内的 Integer 实例使用自动装箱来创建，那么就会引用相同的对象。
 
 ```java
 Integer m = 123;
@@ -143,20 +146,19 @@ System.out.println(m == n); // true
 
 基本类型对应的缓冲池如下：
 
-- boolean values true and false
-- all byte values
-- short values between -128 and 127
-- int values between -128 and 127
-- char in the range \u0000 to \u007F
+* boolean values true and false
+* all byte values
+* short values between -128 and 127
+* int values between -128 and 127
+* char in the range \u0000 to \u007F
 
 在使用这些基本类型对应的包装类型时，就可以直接使用缓冲池中的对象。
 
-[StackOverflow : Differences between new Integer(123), Integer.valueOf(123) and just 123
-](https://stackoverflow.com/questions/9030817/differences-between-new-integer123-integer-valueof123-and-just-123)
+[StackOverflow : Differences between new Integer\(123\), Integer.valueOf\(123\) and just 123 ](https://stackoverflow.com/questions/9030817/differences-between-new-integer123-integer-valueof123-and-just-123)
 
-# 二string
+## 二string
 
-## 概览
+### 概览
 
 String 被声明为 final，因此它不可被继承。
 
@@ -185,7 +187,7 @@ public final class String
 
 value 数组被声明为 final，这意味着 value 数组初始化之后就不能再引用其它数组。并且 String 内部没有改变 value 数组的方法，因此可以保证 String 不可变。
 
-## 不可变的好处
+### 不可变的好处
 
 **1. 可以缓存 hash 值**
 
@@ -195,7 +197,7 @@ value 数组被声明为 final，这意味着 value 数组初始化之后就不�
 
 如果一个 String 对象已经被创建过了，那么就会从 String Pool 中取得引用。只有 String 是不可变的，才可能使用 String Pool。
 
-<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/9112288f-23f5-4e53-b222-a46fdbca1603.png" width="300px"> </div><br>
+![](https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/9112288f-23f5-4e53-b222-a46fdbca1603.png)
 
 **3. 安全性**
 
@@ -207,18 +209,18 @@ String 不可变性天生具备线程安全，可以在多个线程中安全地�
 
 [Program Creek : Why String is immutable in Java?](https://www.programcreek.com/2013/04/why-string-is-immutable-in-java/)
 
-## String, StringBuffer and StringBuilder
+### String, StringBuffer and StringBuilder
 
 **1. 可变性**
 
-- String 不可变
-- StringBuffer 和 StringBuilder 可变
+* String 不可变
+* StringBuffer 和 StringBuilder 可变
 
 **2. 线程安全**
 
-- String 不可变，因此是线程安全的
-- StringBuilder 不是线程安全的
-- StringBuffer 是线程安全的，内部使用 synchronized 进行同步
+* String 不可变，因此是线程安全的
+* StringBuilder 不是线程安全的
+* StringBuffer 是线程安全的，内部使用 synchronized 进行同步
 
 ```java
 public synchronized StringBuffer append(char c) {
@@ -226,15 +228,16 @@ public synchronized StringBuffer append(char c) {
     return t
 }
 ```
+
 [StackOverflow : String, StringBuffer, and StringBuilder](https://stackoverflow.com/questions/2971315/string-stringbuffer-and-stringbuilder)
 
-## String Pool
+### String Pool
 
-字符串常量池（String Pool）保存着所有字符串字面量（literal strings），这些字面量在编译时期就确定。不仅如此，还可以使用 String 的 intern() 方法在运行过程中将字符串添加到 String Pool 中。
+字符串常量池（String Pool）保存着所有字符串字面量（literal strings），这些字面量在编译时期就确定。不仅如此，还可以使用 String 的 intern\(\) 方法在运行过程中将字符串添加到 String Pool 中。
 
-当一个字符串调用 intern() 方法时，如果 String Pool 中已经存在一个字符串和该字符串值相等（使用 equals() 方法进行确定），那么就会返回 String Pool 中字符串的引用；否则，就会在 String Pool 中添加一个新的字符串，并返回这个新字符串的引用。
+当一个字符串调用 intern\(\) 方法时，如果 String Pool 中已经存在一个字符串和该字符串值相等（使用 equals\(\) 方法进行确定），那么就会返回 String Pool 中字符串的引用；否则，就会在 String Pool 中添加一个新的字符串，并返回这个新字符串的引用。
 
-下面示例中，s1 和 s2 采用 new String() 的方式新建了两个不同字符串，而 s3 和 s4 是通过 s1.intern() 方法取得一个字符串引用。intern() 首先把 s1 引用的字符串放到 String Pool 中，然后返回这个字符串引用。因此 s3 和 s4 引用的是同一个字符串。
+下面示例中，s1 和 s2 采用 new String\(\) 的方式新建了两个不同字符串，而 s3 和 s4 是通过 s1.intern\(\) 方法取得一个字符串引用。intern\(\) 首先把 s1 引用的字符串放到 String Pool 中，然后返回这个字符串引用。因此 s3 和 s4 引用的是同一个字符串。
 
 ```java
 String s1 = new String("aaa");
@@ -255,19 +258,21 @@ System.out.println(s5 == s6);  // true
 
 在 Java 7 之前，String Pool 被放在运行时常量池中，它属于永久代。而在 Java 7，String Pool 被移到堆中。这是因为永久代的空间有限，在大量使用字符串的场景下会导致 OutOfMemoryError 错误。
 
-- [StackOverflow : What is String interning?](https://stackoverflow.com/questions/10578984/what-is-string-interning)
-- [深入解析 String#intern](https://tech.meituan.com/in_depth_understanding_string_intern.html)
+* [StackOverflow : What is String interning?](https://stackoverflow.com/questions/10578984/what-is-string-interning)
+* [深入解析 String\#intern](https://tech.meituan.com/in_depth_understanding_string_intern.html)
 
 在 jdk6中StringTable是固定的，就是1009的长度，所以如果常量池中的字符串过多就会导致效率下降很快。在jdk7中，StringTable的长度可以通过一个参数指定：
 
-    -XX:StringTableSize=99991
+```text
+-XX:StringTableSize=99991
+```
 
-## new String("abc")
+### new String\("abc"\)
 
 使用这种方式一共会创建两个字符串对象（前提是 String Pool 中还没有 "abc" 字符串对象）。
 
-- "abc" 属于字符串字面量，因此编译时期会在 String Pool 中创建一个字符串对象，指向这个 "abc" 字符串字面量；
-- 而使用 new 的方式会在堆中创建一个字符串对象。
+* "abc" 属于字符串字面量，因此编译时期会在 String Pool 中创建一个字符串对象，指向这个 "abc" 字符串字面量；
+* 而使用 new 的方式会在堆中创建一个字符串对象。
 
 创建一个测试类，其 main 方法中使用这种方式来创建字符串对象。
 
@@ -305,7 +310,7 @@ Constant pool:
 // ...
 ```
 
-在 Constant Pool 中，#19 存储这字符串字面量 "abc"，#3 是 String Pool 的字符串对象，它指向 #19 这个字符串字面量。在 main 方法中，0: 行使用 new #2 在堆中创建一个字符串对象，并且使用 ldc #3 将 String Pool 中的字符串对象作为 String 构造函数的参数。
+在 Constant Pool 中，\#19 存储这字符串字面量 "abc"，\#3 是 String Pool 的字符串对象，它指向 \#19 这个字符串字面量。在 main 方法中，0: 行使用 new \#2 在堆中创建一个字符串对象，并且使用 ldc \#3 将 String Pool 中的字符串对象作为 String 构造函数的参数。
 
 以下是 String 构造函数的源码，可以看到，在将一个字符串对象作为另一个字符串对象的构造函数参数时，并不会完全复制 value 数组内容，而是都会指向同一个 value 数组。
 
@@ -316,9 +321,9 @@ public String(String original) {
 }
 ```
 
-# 三、运算
+## 三、运算
 
-## 参数传递
+### 参数传递
 
 Java 的参数是以值传递的形式传入方法中，而不是引用传递。
 
@@ -384,7 +389,7 @@ class PassByValueExample {
 
 [StackOverflow: Is Java “pass-by-reference” or “pass-by-value”?](https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value)
 
-## float 与 double
+### float 与 double
 
 Java 不能隐式执行向下转型，因为这会使得精度降低。
 
@@ -400,7 +405,7 @@ Java 不能隐式执行向下转型，因为这会使得精度降低。
 float f = 1.1f;
 ```
 
-## 隐式类型转换
+### 隐式类型转换
 
 因为字面量 1 是 int 类型，它比 short 类型精度要高，因此不能隐式地将 int 类型下转型为 short 类型。
 
@@ -422,9 +427,9 @@ s1 += 1;
 s1 = (short) (s1 + 1);
 ```
 
-[StackOverflow : Why don't Java's +=, -=, *=, /= compound assignment operators require casting?](https://stackoverflow.com/questions/8710619/why-dont-javas-compound-assignment-operators-require-casting)
+[StackOverflow : Why don't Java's +=, -=, \*=, /= compound assignment operators require casting?](https://stackoverflow.com/questions/8710619/why-dont-javas-compound-assignment-operators-require-casting)
 
-## switch
+### switch
 
 从 Java 7 开始，可以在 switch 条件判断语句中使用 String 对象。
 
@@ -456,48 +461,47 @@ switch 不支持 long，是因为 switch 的设计初衷是对那些只有少数
 
 [StackOverflow : Why can't your switch statement data type be long, Java?](https://stackoverflow.com/questions/2676210/why-cant-your-switch-statement-data-type-be-long-java)
 
-# 四、继承
+## 四、继承
 
-## 访问权限
+### 访问权限
 
-Java中有4个访问权限修饰符：private、default、protected 以及 public，如果不加访问修饰符，表示包级可见。
-![Java类访问权限控制](img/Java访问权限控制.png)
+Java中有4个访问权限修饰符：private、default、protected 以及 public，如果不加访问修饰符，表示包级可见。 ![Java&#x7C7B;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x63A7;&#x5236;](../../.gitbook/assets/Java访问权限控制.png)
 
-注意protected的访问权限，
-protected的可见性在于两点：
+注意protected的访问权限， protected的可见性在于两点：
+
 * 基类的protected成员是包内可见的，并且对子类可见；
 * 若子类与基类不在同一包中，那么在子类中，子类实例可以访问其从基类继承而来的protected方法，而不能访问基类实例的protected方法。
-```java
-//示例一
-package p1;
-public class Father1 {
-    protected void f() {}    // 父类Father1中的protected方法
+
+  \`\`\`java
+
+  //示例一
+
+  package p1;
+
+  public class Father1 {
+
+    protected void f\(\) {}    // 父类Father1中的protected方法
+
+  }
+
+package p1; public class Son1 extends Father1 {}
+
+package p11; public class Son11 extends Father1{}
+
+package p1; public class Test1 { public static void main\(String\[\] args\) { Son1 son1 = new Son1\(\); son1.f\(\); // Compile OK ----（1） son1.clone\(\); // Compile Error ----（2）
+
+```text
+    Son11 son = new Son11();
+    son11.f(); // Compile OK     ----（3）
+    son11.clone(); // Compile Error     ----（4）
 }
-
-package p1;
-public class Son1 extends Father1 {}
-
-package p11;
-public class Son11 extends Father1{}
-
-package p1;
-public class Test1 {
-    public static void main(String[] args) {
-        Son1 son1 = new Son1();
-        son1.f(); // Compile OK     ----（1）
-        son1.clone(); // Compile Error     ----（2）
-
-        Son11 son = new Son11();
-        son11.f(); // Compile OK     ----（3）
-        son11.clone(); // Compile Error     ----（4）
-    }
-}
-
-/*
-对于上面的示例，首先看(1)(3)，其中的f()方法从类Father1继承而来，其可见性是包p1及其子类Son1和Son11，而由于调用f()方法的类Test1所在的包也是p1，因此（1）(3)处编译通过。其次看(2)(4)，其中的clone()方法的可见性是java.lang包及其所有子类，对于语句“son1.clone();”和“son11.clone();”，二者的clone()在类Son1、Son11中是可见的，但对Test1是不可见的，因此（1）(3)处编译不通过
-*/
 ```
 
+}
+
+/ _对于上面的示例，首先看\(1\)\(3\)，其中的f\(\)方法从类Father1继承而来，其可见性是包p1及其子类Son1和Son11，而由于调用f\(\)方法的类Test1所在的包也是p1，因此（1）\(3\)处编译通过。其次看\(2\)\(4\)，其中的clone\(\)方法的可见性是java.lang包及其所有子类，对于语句“son1.clone\(\);”和“son11.clone\(\);”，二者的clone\(\)在类Son1、Son11中是可见的，但对Test1是不可见的，因此（1）\(3\)处编译不通过_ /
+
+```text
 ## 抽象类与接口
 
 **1. 抽象类**
@@ -581,42 +585,38 @@ System.out.println(InterfaceExample.x);
 
 **3. 比较**
 
-- 从设计层面上看，抽象类提供了一种 IS-A 关系，那么就必须满足里式替换原则，即子类对象必须能够替换掉所有父类对象。而接口更像是一种 LIKE-A 关系，它只是提供一种方法实现契约，并不要求接口和实现接口的类具有 IS-A 关系。
-- 从使用上来看，一个类可以实现多个接口，但是不能继承多个抽象类。
-- 接口的字段只能是 static 和 final 类型的，而抽象类的字段没有这种限制。
-- 接口的成员只能是 public 的，而抽象类的成员可以有多种访问权限。
+* 从设计层面上看，抽象类提供了一种 IS-A 关系，那么就必须满足里式替换原则，即子类对象必须能够替换掉所有父类对象。而接口更像是一种 LIKE-A 关系，它只是提供一种方法实现契约，并不要求接口和实现接口的类具有 IS-A 关系。
+* 从使用上来看，一个类可以实现多个接口，但是不能继承多个抽象类。
+* 接口的字段只能是 static 和 final 类型的，而抽象类的字段没有这种限制。
+* 接口的成员只能是 public 的，而抽象类的成员可以有多种访问权限。
 
 **4. 使用选择**
 
 使用接口：
 
-- 需要让不相关的类都实现一个方法，例如不相关的类都可以实现 Compareable 接口中的 compareTo() 方法；
-- 需要使用多重继承。
+* 需要让不相关的类都实现一个方法，例如不相关的类都可以实现 Compareable 接口中的 compareTo\(\) 方法；
+* 需要使用多重继承。
 
 使用抽象类：
 
-- 需要在几个相关的类中共享代码。
-- 需要能控制继承来的成员的访问权限，而不是都为 public。
-- 需要继承非静态和非常量字段。
+* 需要在几个相关的类中共享代码。
+* 需要能控制继承来的成员的访问权限，而不是都为 public。
+* 需要继承非静态和非常量字段。
 
 在很多情况下，接口优先于抽象类。因为接口没有抽象类严格的类层次结构要求，可以灵活地为一个类添加行为。并且从 Java 8 开始，接口也可以有默认的方法实现，使得修改接口的成本也变的很低。
 
-- [Abstract Methods and Classes](https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html)
-- [深入理解 abstract class 和 interface](https://www.ibm.com/developerworks/cn/java/l-javainterface-abstract/)
-- [When to Use Abstract Class and Interface](https://dzone.com/articles/when-to-use-abstract-class-and-intreface)
+* [Abstract Methods and Classes](https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html)
+* [深入理解 abstract class 和 interface](https://www.ibm.com/developerworks/cn/java/l-javainterface-abstract/)
+* [When to Use Abstract Class and Interface](https://dzone.com/articles/when-to-use-abstract-class-and-intreface)
 
-### Java中还有一个叫标记接口（接口中没有任何方法，如Cloneable, RandomAccess, Serializable）
-标记接口（Marker）：这就说明了 RandomAccess 为空的原因，这个接口的功能仅仅起到标记的作用。
-这不是与序列化接口 Serializable 差不多吗？ 只要你认真观察， 其实不只这一个标记接口， 实际上 ArrayList 还实现了另外两个这样的空接口：
-Cloneable 接口 ：实现了 Cloneable 接口，以指示 Object.clone() 方法可以合法地对该类实例进行按字段复制。 如果在没有实现 Cloneable 接口的实例上调用 Object 的 clone 方法，则会导致抛出 CloneNotSupportedException 异常。
-Serializable 接口： 类通过实现 java.io.Serializable 接口以启用其序列化功能。未实现此接口的类将无法使其任何状态序列化或反序列化。
+#### Java中还有一个叫标记接口（接口中没有任何方法，如Cloneable, RandomAccess, Serializable）
 
+标记接口（Marker）：这就说明了 RandomAccess 为空的原因，这个接口的功能仅仅起到标记的作用。 这不是与序列化接口 Serializable 差不多吗？ 只要你认真观察， 其实不只这一个标记接口， 实际上 ArrayList 还实现了另外两个这样的空接口： Cloneable 接口 ：实现了 Cloneable 接口，以指示 Object.clone\(\) 方法可以合法地对该类实例进行按字段复制。 如果在没有实现 Cloneable 接口的实例上调用 Object 的 clone 方法，则会导致抛出 CloneNotSupportedException 异常。 Serializable 接口： 类通过实现 java.io.Serializable 接口以启用其序列化功能。未实现此接口的类将无法使其任何状态序列化或反序列化。
 
+### super
 
-## super
-
-- 访问父类的构造函数：可以使用 super() 函数访问父类的构造函数，从而委托父类完成一些初始化的工作。
-- 访问父类的成员：如果子类重写了父类的某个方法，可以通过使用 super 关键字来引用父类的方法实现。
+* 访问父类的构造函数：可以使用 super\(\) 函数访问父类的构造函数，从而委托父类完成一些初始化的工作。
+* 访问父类的成员：如果子类重写了父类的某个方法，可以通过使用 super 关键字来引用父类的方法实现。
 
 ```java
 public class SuperExample {
@@ -658,14 +658,14 @@ SuperExample e = new SuperExtendExample(1, 2, 3);
 e.func();
 ```
 
-```html
+```markup
 SuperExample.func()
 SuperExtendExample.func()
 ```
 
 [Using the Keyword super](https://docs.oracle.com/javase/tutorial/java/IandI/super.html)
 
-## 重写与重载
+### 重写与重载
 
 **1. 重写（Override）**
 
@@ -673,18 +673,18 @@ SuperExtendExample.func()
 
 为了满足里式替换原则，重写有以下三个限制：
 
-- 子类方法的访问权限必须大于等于父类方法；
-- 子类方法的返回类型必须是父类方法返回类型或为其子类型。
-- 子类方法抛出的异常类型必须是父类抛出异常类型或为其子类型。
+* 子类方法的访问权限必须大于等于父类方法；
+* 子类方法的返回类型必须是父类方法返回类型或为其子类型。
+* 子类方法抛出的异常类型必须是父类抛出异常类型或为其子类型。
 
 使用 @Override 注解，可以让编译器帮忙检查是否满足上面的三个限制条件。
 
-下面的示例中，SubClass 为 SuperClass 的子类，SubClass 重写了 SuperClass 的 func() 方法。其中：
+下面的示例中，SubClass 为 SuperClass 的子类，SubClass 重写了 SuperClass 的 func\(\) 方法。其中：
 
-- 子类方法访问权限为 public，大于父类的 protected。
-- 子类的返回类型为 ArrayList<Integer>，是父类返回类型 List<Integer> 的子类。
-- 子类抛出的异常类型为 Exception，是父类抛出异常 Throwable 的子类。
-- 子类重写方法使用 @Override 注解，从而让编译器自动检查是否满足限制条件。
+* 子类方法访问权限为 public，大于父类的 protected。
+* 子类的返回类型为 ArrayList，是父类返回类型 List 的子类。
+* 子类抛出的异常类型为 Exception，是父类抛出异常 Throwable 的子类。
+* 子类重写方法使用 @Override 注解，从而让编译器自动检查是否满足限制条件。
 
 ```java
 class SuperClass {
@@ -703,11 +703,10 @@ class SubClass extends SuperClass {
 
 在调用一个方法时，先从本类中查找看是否有对应的方法，如果没有查找到再到父类中查看，看是否有继承来的方法。否则就要对参数进行转型，转成父类之后看是否有对应的方法。总的来说，方法调用的优先级为：
 
-- this.func(this)
-- super.func(this)
-- this.func(super)
-- super.func(super)
-
+* this.func\(this\)
+* super.func\(this\)
+* this.func\(super\)
+* super.func\(super\)
 
 ```java
 /*
@@ -771,17 +770,15 @@ public static void main(String[] args) {
 }
 ```
 
-**2. 重载（Overload）**
-同命不同参 - 存在于同一个类中，指一个方法与已经存在的方法名称上相同，但是参数类型、个数、顺序至少有一个不同。
+**2. 重载（Overload）** 同命不同参 - 存在于同一个类中，指一个方法与已经存在的方法名称上相同，但是参数类型、个数、顺序至少有一个不同。
 
 应该注意的是，返回值不同，其它都相同不算是重载。
 
-# 五、Object 通用方法
+## 五、Object 通用方法
 
-## 概览
+### 概览
 
 ```java
-
 public native int hashCode()
 
 public boolean equals(Object obj)
@@ -805,7 +802,7 @@ public final void wait(long timeout, int nanos) throws InterruptedException
 public final void wait() throws InterruptedException
 ```
 
-## equals()
+### equals\(\)
 
 **1. 等价关系**
 
@@ -830,7 +827,7 @@ if (x.equals(y) && y.equals(z))
 
 Ⅳ 一致性
 
-多次调用 equals() 方法结果不变
+多次调用 equals\(\) 方法结果不变
 
 ```java
 x.equals(y) == x.equals(y); // true
@@ -838,7 +835,7 @@ x.equals(y) == x.equals(y); // true
 
 Ⅴ 与 null 的比较
 
-对任何不是 null 的对象 x 调用 x.equals(null) 结果都为 false
+对任何不是 null 的对象 x 调用 x.equals\(null\) 结果都为 false
 
 ```java
 x.equals(null); // false;
@@ -849,26 +846,31 @@ x.equals(null); // false;
 1. 基础数据类型没有equals方法，只能使用==来判断，判断的时候是判断值是否相等
 2. 引用类型可以使用==和equalls。如果对象不重写Object中的equals方法，那么==和equals没有区别，因为Object中的equals也是使用==来判断；如果重写了equals方法，那就使用对象重写的equals方法来判断。==比较的是两个对象在堆中存放数据的内存地址是否相等。
 3. String需要拿来特殊说明，String是Java中不需要new就可以产生对象的特例。使用String来申明一个变量的时候，JVM会在常量池中查找是否已经存在这个值，如果存在就把内存地址返回给变量；如果不存在，会新开辟一个空间来存储这个值，然后把内存地址返回。那么我们再来看String中==和equals的区别，String中使用==比较的是内存地址是否相等，String重写了Object中的equals方法，使用equals时先比较对象是否相等，如果相等就返回true；否则比较值是否相等。
-    public boolean equals(Object anObject) {
-        if (this == anObject) {
+
+    public boolean equals\(Object anObject\) {
+
+   ```text
+    if (this == anObject) {
+        return true;
+    }
+    if (anObject instanceof String) {
+        String anotherString = (String)anObject;
+        int n = value.length;
+        if (n == anotherString.value.length) {
+            char v1[] = value;
+            char v2[] = anotherString.value;
+            int i = 0;
+            while (n-- != 0) {
+                if (v1[i] != v2[i])
+                    return false;
+                i++;
+            }
             return true;
         }
-        if (anObject instanceof String) {
-            String anotherString = (String)anObject;
-            int n = value.length;
-            if (n == anotherString.value.length) {
-                char v1[] = value;
-                char v2[] = anotherString.value;
-                int i = 0;
-                while (n-- != 0) {
-                    if (v1[i] != v2[i])
-                        return false;
-                    i++;
-                }
-                return true;
-            }
-        }
-        return false;
+    }
+    return false;
+   ```
+
     }
 
 ```java
@@ -880,10 +882,10 @@ System.out.println(x == y);      // false
 
 **3. 实现**
 
-- 检查是否为同一个对象的引用，如果是直接返回 true；
-- 检查是否是同一个类型，如果不是，直接返回 false；
-- 将 Object 对象进行转型；
-- 判断每个关键域是否相等。
+* 检查是否为同一个对象的引用，如果是直接返回 true；
+* 检查是否是同一个类型，如果不是，直接返回 false；
+* 将 Object 对象进行转型；
+* 判断每个关键域是否相等。
 
 ```java
 public class EqualExample {
@@ -912,17 +914,13 @@ public class EqualExample {
 }
 ```
 
-## hashCode()
+### hashCode\(\)
 
-hashCode() 返回散列值，而 equals() 是用来判断两个对象是否等价。等价的两个对象散列值一定相同，但是散列值相同的两个对象不一定等价。
-[
-    1. 因为hashCode()并不是完全可靠，有时候不同的对象他们生成的hashcode也会一样（生成hash值得公式可能存在的问题），所以hashCode()只能说是大部分时候可靠，并不是绝对可靠。
-    2. 你可以重写hashCode()
-]
+hashCode\(\) 返回散列值，而 equals\(\) 是用来判断两个对象是否等价。等价的两个对象散列值一定相同，但是散列值相同的两个对象不一定等价。 \[ 1. 因为hashCode\(\)并不是完全可靠，有时候不同的对象他们生成的hashcode也会一样（生成hash值得公式可能存在的问题），所以hashCode\(\)只能说是大部分时候可靠，并不是绝对可靠。 2. 你可以重写hashCode\(\) \]
 
-在覆盖 equals() 方法时应当总是覆盖 hashCode() 方法，保证等价的两个对象散列值也相等。
+在覆盖 equals\(\) 方法时应当总是覆盖 hashCode\(\) 方法，保证等价的两个对象散列值也相等。
 
-下面的代码中，新建了两个等价的对象，并将它们添加到 HashSet 中。我们希望将这两个对象当成一样的，只在集合中添加一个对象，但是因为 EqualExample 没有实现 hasCode() 方法，因此这两个对象的散列值是不同的，最终导致集合添加了两个等价的对象。
+下面的代码中，新建了两个等价的对象，并将它们添加到 HashSet 中。我们希望将这两个对象当成一样的，只在集合中添加一个对象，但是因为 EqualExample 没有实现 hasCode\(\) 方法，因此这两个对象的散列值是不同的，最终导致集合添加了两个等价的对象。
 
 ```java
 EqualExample e1 = new EqualExample(1, 1, 1);
@@ -949,7 +947,7 @@ public int hashCode() {
 }
 ```
 
-## toString()
+### toString\(\)
 
 默认返回 ToStringExample@4554617c 这种形式，其中 @ 后面的数值为散列码的无符号十六进制表示。
 
@@ -969,15 +967,15 @@ ToStringExample example = new ToStringExample(123);
 System.out.println(example.toString());
 ```
 
-```html
+```markup
 ToStringExample@4554617c
 ```
 
-## clone()
+### clone\(\)
 
 **1. cloneable**
 
-clone() 是 Object 的 protected 方法，它不是 public，一个类不显式去重写 clone()，其它类就不能直接去调用该类实例的 clone() 方法。
+clone\(\) 是 Object 的 protected 方法，它不是 public，一个类不显式去重写 clone\(\)，其它类就不能直接去调用该类实例的 clone\(\) 方法。
 
 ```java
 public class CloneExample {
@@ -991,7 +989,7 @@ CloneExample e1 = new CloneExample();
 // CloneExample e2 = e1.clone(); // 'clone()' has protected access in 'java.lang.Object'
 ```
 
-重写 clone() 得到以下实现：
+重写 clone\(\) 得到以下实现：
 
 ```java
 public class CloneExample {
@@ -1014,13 +1012,13 @@ try {
 }
 ```
 
-```html
+```markup
 java.lang.CloneNotSupportedException: CloneExample
 ```
 
 以上抛出了 CloneNotSupportedException，这是因为 CloneExample 没有实现 Cloneable 接口。
 
-应该注意的是，clone() 方法并不是 Cloneable 接口的方法，而是 Object 的一个 protected 方法。Cloneable 接口只是规定，如果一个类没有实现 Cloneable 接口又调用了 clone() 方法，就会抛出 CloneNotSupportedException。
+应该注意的是，clone\(\) 方法并不是 Cloneable 接口的方法，而是 Object 的一个 protected 方法。Cloneable 接口只是规定，如果一个类没有实现 Cloneable 接口又调用了 clone\(\) 方法，就会抛出 CloneNotSupportedException。
 
 ```java
 public class CloneExample implements Cloneable {
@@ -1125,9 +1123,9 @@ e1.set(2, 222);
 System.out.println(e2.get(2)); // 2
 ```
 
-**4. clone() 的替代方案**
+**4. clone\(\) 的替代方案**
 
-使用 clone() 方法来拷贝一个对象即复杂又有风险，它会抛出异常，并且还需要类型转换。Effective Java 书上讲到，最好不要去使用 clone()，可以使用拷贝构造函数或者拷贝工厂来拷贝一个对象。
+使用 clone\(\) 方法来拷贝一个对象即复杂又有风险，它会抛出异常，并且还需要类型转换。Effective Java 书上讲到，最好不要去使用 clone\(\)，可以使用拷贝构造函数或者拷贝工厂来拷贝一个对象。
 
 ```java
 public class CloneConstructorExample {
@@ -1165,72 +1163,54 @@ e1.set(2, 222);
 System.out.println(e2.get(2)); // 2
 ```
 
-# 六、关键字
+## 六、关键字
 
-## 访问控制
-`private`
-`protected`
-`public`
+### 访问控制
 
-## 类、方法和变量修饰符
-`abstract`
-`class`
-`extends`
-`final`
-`implements`
-`interface`
-`native`
-`new`
-`static`
-`strictfp`
+`private` `protected` `public`
+
+### 类、方法和变量修饰符
+
+`abstract` `class` `extends` `final` `implements` `interface` `native` `new` `static` `strictfp`
 
 `synchronized`
 
+`transient` 将不需要序列化的属性前添加关键字transient，序列化对象的时候，这个属性就不会被序列化。【对象序列化是一个用于将对象状态转换为字节流的过程，可以将其保存到磁盘文件中或通过网络发送到任何其他程序；从字节流创建对象的相反的过程称为反序列化】
 
-`transient`
-将不需要序列化的属性前添加关键字transient，序列化对象的时候，这个属性就不会被序列化。【对象序列化是一个用于将对象状态转换为字节流的过程，可以将其保存到磁盘文件中或通过网络发送到任何其他程序；从字节流创建对象的相反的过程称为反序列化】
+`volatile` volatile只能修饰变量，被修饰的变量对其他线程是“可见的”，同时volatile修饰的变量禁止指令重排（保证了有序性）
 
-`volatile`
-volatile只能修饰变量，被修饰的变量对其他线程是“可见的”，同时volatile修饰的变量禁止指令重排（保证了有序性）
+### 程序控制
 
-## 程序控制
-`break`
-`continue`
-`return`
-`do`
-`while`
-`if`
-`else`
-`for`
-`instanceof`
-`switch`
-`case`
-`default`
+`break` `continue` `return` `do` `while` `if` `else` `for` `instanceof` `switch` `case` `default`
 
-## 错误处理
+### 错误处理
+
 `try` `catch` `throw` `throws`
 
-## 包相关
+### 包相关
+
 `import` `package`
 
-## 基础类型
+### 基础类型
+
 `boolean` `byte` `char` `double` `float` `int` `long` `short` `null` `true` `false`
 
-## 变量引用
+### 变量引用
+
 `super` `this` `void`
 
-## 保留字
+### 保留字
+
 `goto` `const`
 
-## final
-
+### final
 
 **1. 数据**
 
 声明数据为常量，可以是编译时常量，也可以是在运行时被初始化后不能被改变的常量。
 
-- 对于基本类型，final 使数值不变；
-- 对于引用类型，final 使引用不变，也就不能引用其它对象，但是被引用的对象本身是可以修改的。
+* 对于基本类型，final 使数值不变；
+* 对于引用类型，final 使引用不变，也就不能引用其它对象，但是被引用的对象本身是可以修改的。
 
 ```java
 final int x = 1;
@@ -1249,12 +1229,12 @@ private 方法隐式地被指定为 final，如果在子类中定义的方法和
 
 声明类不允许被继承。
 
-## static
+### static
 
 **1. 静态变量**
 
-- 静态变量：又称为类变量，也就是说这个变量属于类的，类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份。
-- 实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。
+* 静态变量：又称为类变量，也就是说这个变量属于类的，类所有的实例都共享静态变量，可以直接通过类名来访问它。静态变量在内存中只存在一份。
+* 实例变量：每创建一个实例就会产生一个实例变量，它与该实例同生共死。
 
 ```java
 public class A {
@@ -1316,7 +1296,7 @@ public class A {
 }
 ```
 
-```html
+```markup
 123
 ```
 
@@ -1386,23 +1366,24 @@ public InitialOrderTest() {
 
 存在继承的情况下，初始化顺序为：
 
-- 父类（静态变量、静态语句块）
-- 子类（静态变量、静态语句块）
-- 父类（实例变量、普通语句块）
-- 父类（构造函数）
-- 子类（实例变量、普通语句块）
-- 子类（构造函数）
+* 父类（静态变量、静态语句块）
+* 子类（静态变量、静态语句块）
+* 父类（实例变量、普通语句块）
+* 父类（构造函数）
+* 子类（实例变量、普通语句块）
+* 子类（构造函数）
 
-## transient
+### transient
+
 被transient关键字修饰的变量不参与序列化，如ArrayList中的 elementData变量
+
 ```java
 private transient Object[] elementData;
 ```
 
+## 七、反射
 
-# 七、反射
-
-每个类都有一个  **Class**  对象，包含了与类有关的信息。当编译一个新类时，会产生一个同名的 .class 文件，该文件内容保存着 Class 对象。
+每个类都有一个 **Class** 对象，包含了与类有关的信息。当编译一个新类时，会产生一个同名的 .class 文件，该文件内容保存着 Class 对象。
 
 类加载相当于 Class 对象的加载，类在第一次使用时才动态加载到 JVM 中。也可以使用 `Class.forName("com.mysql.jdbc.Driver")` 这种方式来控制类的加载，该方法会返回一个 Class 对象。
 
@@ -1410,50 +1391,49 @@ private transient Object[] elementData;
 
 Class 和 java.lang.reflect 一起对反射提供了支持，java.lang.reflect 类库主要包含了以下三个类：
 
--  **Field** ：可以使用 get() 和 set() 方法读取和修改 Field 对象关联的字段；
--  **Method** ：可以使用 invoke() 方法调用与 Method 对象关联的方法；
--  **Constructor** ：可以用 Constructor 创建新的对象。
+* **Field** ：可以使用 get\(\) 和 set\(\) 方法读取和修改 Field 对象关联的字段；
+* **Method** ：可以使用 invoke\(\) 方法调用与 Method 对象关联的方法；
+* **Constructor** ：可以用 Constructor 创建新的对象。
 
 **反射的优点：**
 
-*    **可扩展性**  ：应用程序可以利用全限定名创建可扩展对象的实例，来使用来自外部的用户自定义类。
-*    **类浏览器和可视化开发环境**  ：一个类浏览器需要可以枚举类的成员。可视化开发环境（如 IDE）可以从利用反射中可用的类型信息中受益，以帮助程序员编写正确的代码。
-*    **调试器和测试工具**  ： 调试器需要能够检查一个类里的私有成员。测试工具可以利用反射来自动地调用类里定义的可被发现的 API 定义，以确保一组测试中有较高的代码覆盖率。
+* **可扩展性**  ：应用程序可以利用全限定名创建可扩展对象的实例，来使用来自外部的用户自定义类。
+* **类浏览器和可视化开发环境**  ：一个类浏览器需要可以枚举类的成员。可视化开发环境（如 IDE）可以从利用反射中可用的类型信息中受益，以帮助程序员编写正确的代码。
+* **调试器和测试工具**  ： 调试器需要能够检查一个类里的私有成员。测试工具可以利用反射来自动地调用类里定义的可被发现的 API 定义，以确保一组测试中有较高的代码覆盖率。
 
 **反射的缺点：**
 
 尽管反射非常强大，但也不能滥用。如果一个功能可以不用反射完成，那么最好就不用。在我们使用反射技术时，下面几条内容应该牢记于心。
 
-*    **性能开销**  ：反射涉及了动态类型的解析，所以 JVM 无法对这些代码进行优化。因此，反射操作的效率要比那些非反射操作低得多。我们应该避免在经常被执行的代码或对性能要求很高的程序中使用反射。
+* **性能开销** ：反射涉及了动态类型的解析，所以 JVM 无法对这些代码进行优化。因此，反射操作的效率要比那些非反射操作低得多。我们应该避免在经常被执行的代码或对性能要求很高的程序中使用反射。
+* **安全限制** ：使用反射技术要求程序必须在一个没有安全限制的环境中运行。如果一个程序必须在有安全限制的环境中运行，如 Applet，那么这就是个问题了。
+* **内部暴露** ：由于反射允许代码执行一些在正常情况下不被允许的操作（比如访问私有的属性和方法），所以使用反射可能会导致意料之外的副作用，这可能导致代码功能失调并破坏可移植性。反射代码破坏了抽象性，因此当平台发生改变的时候，代码的行为就有可能也随着变化。
+* [Trail: The Reflection API](https://docs.oracle.com/javase/tutorial/reflect/index.html)
+* [深入解析 Java 反射（1）- 基础](http://www.sczyh30.com/posts/Java/java-reflection-1/)
 
-*    **安全限制**  ：使用反射技术要求程序必须在一个没有安全限制的环境中运行。如果一个程序必须在有安全限制的环境中运行，如 Applet，那么这就是个问题了。
+## 八、异常
 
-*    **内部暴露**  ：由于反射允许代码执行一些在正常情况下不被允许的操作（比如访问私有的属性和方法），所以使用反射可能会导致意料之外的副作用，这可能导致代码功能失调并破坏可移植性。反射代码破坏了抽象性，因此当平台发生改变的时候，代码的行为就有可能也随着变化。
+Throwable 可以用来表示任何可以作为异常抛出的类，分为两种： **Error** 和 **Exception**。其中 Error 用来表示 JVM 无法处理的错误，Exception 分为两种：
 
+* **受检异常** ：需要用 try...catch... 语句捕获并进行处理，并且可以从异常中恢复；
+* **非受检异常** ：是程序运行时错误，例如除 0 会引发 Arithmetic Exception，此时程序崩溃并且无法恢复。
 
-- [Trail: The Reflection API](https://docs.oracle.com/javase/tutorial/reflect/index.html)
-- [深入解析 Java 反射（1）- 基础](http://www.sczyh30.com/posts/Java/java-reflection-1/)
+![](https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/PPjwP.png)
 
-# 八、异常
-
-Throwable 可以用来表示任何可以作为异常抛出的类，分为两种： **Error**  和 **Exception**。其中 Error 用来表示 JVM 无法处理的错误，Exception 分为两种：
-
--  **受检异常** ：需要用 try...catch... 语句捕获并进行处理，并且可以从异常中恢复；
--  **非受检异常** ：是程序运行时错误，例如除 0 会引发 Arithmetic Exception，此时程序崩溃并且无法恢复。
-
-<div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/PPjwP.png" width="600"/> </div><br>
-
-- [Java 入门之异常处理](https://www.tianmaying.com/tutorial/Java-Exception)
-- [Java 异常的面试问题及答案 -Part 1](http://www.importnew.com/7383.html)
-
+* [Java 入门之异常处理](https://www.tianmaying.com/tutorial/Java-Exception)
+* [Java 异常的面试问题及答案 -Part 1](http://www.importnew.com/7383.html)
 * IllegalStateException
-```
-在不合理或不正确时间内唤醒一个方法时出现的异常信息，英文意思是无效状态异常，比如在服务器已经返回数据给客户端了，这时候想修改字符集参数，就会报这样的错误。
-```
 
-# 九、泛型
+  ```text
+  在不合理或不正确时间内唤醒一个方法时出现的异常信息，英文意思是无效状态异常，比如在服务器已经返回数据给客户端了，这时候想修改字符集参数，就会报这样的错误。
+  ```
+
+## 九、泛型
+
 类型的参数化，就是可以把类型像方法的参数那样传递。泛型使编译器可以在编译期间对类型进行检查以提高类型安全，减少运行时由于对象类型不匹配引发的异常。
-## 为什么要引入泛型？泛型的引入解决了什么问题
+
+### 为什么要引入泛型？泛型的引入解决了什么问题
+
 * 在运行时做类型检查，保证了运行时的类型安全，避免了很多运行时的ClassCastException异常。
 
 ```java
@@ -1465,27 +1445,27 @@ public class Box<T> {
 }
 ```
 
-- [Java 泛型详解](http://www.importnew.com/24029.html)
-- [10 道 Java 泛型面试题](https://cloud.tencent.com/developer/article/1033693)
+* [Java 泛型详解](http://www.importnew.com/24029.html)
+* [10 道 Java 泛型面试题](https://cloud.tencent.com/developer/article/1033693)
 
+### 有界泛型
 
-## 有界泛型
-* <T extends Animal> 限定T是Animal或Animal的子类
-* <T super Dog> 限定T是Dog或Dog的超类
+*  限定T是Animal或Animal的子类
+*  限定T是Dog或Dog的超类
 
-## 泛型通配符
-* <? extends Animal> 限定T是Animal或Animal的子类
+### 泛型通配符
 
+* &lt;? extends Animal&gt; 限定T是Animal或Animal的子类
 
-# 十、注解
+## 十、注解
 
 Java 注解是附加在代码中的一些元信息，用于一些工具在编译、运行时进行解析和使用，起到说明、配置的功能。注解不会也不能影响代码的实际逻辑，仅仅起到辅助性的作用。
 
 [注解 Annotation 实现原理与自定义注解例子](https://www.cnblogs.com/acm-bingzi/p/javaAnnotation.html)
 
-# 十一、特性
+## 十一、特性
 
-## Java 各版本的新特性
+### Java 各版本的新特性
 
 **New highlights in Java SE 8**
 
@@ -1509,34 +1489,35 @@ Java 注解是附加在代码中的一些元信息，用于一些工具在编译
 6. Java nio Package
 7. Binary Literals, Underscore in literals
 8. Diamond Syntax
+9. [Difference between Java 1.8 and Java 1.7?](http://www.selfgrowth.com/articles/difference-between-java-18-and-java-17)
+10. [Java 8 特性](http://www.importnew.com/19345.html)
 
-- [Difference between Java 1.8 and Java 1.7?](http://www.selfgrowth.com/articles/difference-between-java-18-and-java-17)
-- [Java 8 特性](http://www.importnew.com/19345.html)
+## 十二、JDBC操作数据库
 
-# 十二、JDBC操作数据库
+## 其他
 
-# 其他
-## Java 与 C++ 的区别
+### Java 与 C++ 的区别
 
-- Java 是纯粹的面向对象语言，所有的对象都继承自 java.lang.Object，C++ 为了兼容 C 即支持面向对象也支持面向过程。
-- Java 通过虚拟机从而实现跨平台特性，但是 C++ 依赖于特定的平台。
-- Java 没有指针，它的引用可以理解为安全指针，而 C++ 具有和 C 一样的指针。
-- Java 支持自动垃圾回收，而 C++ 需要手动回收。
-- Java 不支持多重继承，只能通过实现多个接口来达到相同目的，而 C++ 支持多重继承。
-- Java 不支持操作符重载，虽然可以对两个 String 对象执行加法运算，但是这是语言内置支持的操作，不属于操作符重载，而 C++ 可以。
-- Java 的 goto 是保留字，但是不可用，C++ 可以使用 goto。
-- Java 不支持条件编译，C++ 通过 #ifdef #ifndef 等预处理命令从而实现条件编译。
+* Java 是纯粹的面向对象语言，所有的对象都继承自 java.lang.Object，C++ 为了兼容 C 即支持面向对象也支持面向过程。
+* Java 通过虚拟机从而实现跨平台特性，但是 C++ 依赖于特定的平台。
+* Java 没有指针，它的引用可以理解为安全指针，而 C++ 具有和 C 一样的指针。
+* Java 支持自动垃圾回收，而 C++ 需要手动回收。
+* Java 不支持多重继承，只能通过实现多个接口来达到相同目的，而 C++ 支持多重继承。
+* Java 不支持操作符重载，虽然可以对两个 String 对象执行加法运算，但是这是语言内置支持的操作，不属于操作符重载，而 C++ 可以。
+* Java 的 goto 是保留字，但是不可用，C++ 可以使用 goto。
+* Java 不支持条件编译，C++ 通过 \#ifdef \#ifndef 等预处理命令从而实现条件编译。
 
 [What are the main differences between Java and C++?](http://cs-fundamentals.com/tech-interview/java/differences-between-java-and-cpp.php)
 
-## JRE or JDK
+### JRE or JDK
 
-- JRE is the JVM program, Java application need to run on JRE.
-- JDK is a superset of JRE, JRE + tools for developing java programs. e.g, it provides the compiler "javac"
+* JRE is the JVM program, Java application need to run on JRE.
+* JDK is a superset of JRE, JRE + tools for developing java programs. e.g, it provides the compiler "javac"
 
-## Lambda表达式
-Lambda 表达式是一种匿名函数(对 Java 而言这并不完全正确，但现在姑且这么认为)，简单地说，它是没有声明的方法，也即没有访问修饰符、返回值声明和名字。
-Java 中的 Lambda 表达式通常使用 `(argument) -> (body)` 语法书写，例如：
+### Lambda表达式
+
+Lambda 表达式是一种匿名函数\(对 Java 而言这并不完全正确，但现在姑且这么认为\)，简单地说，它是没有声明的方法，也即没有访问修饰符、返回值声明和名字。 Java 中的 Lambda 表达式通常使用 `(argument) -> (body)` 语法书写，例如：
+
 ```java
 (arg1, arg2...) -> { body }
 (type1 arg1, type2 arg2...) -> { body }
@@ -1549,50 +1530,70 @@ Java 中的 Lambda 表达式通常使用 `(argument) -> (body)` 语法书写，�
 () -> { return 3.1415 };
 ```
 
-# 参考资料
+## 参考资料
 
-- Eckel B. Java 编程思想[M]. 机械工业出版社, 2002.
-- Bloch J. Effective java[M]. Addison-Wesley Professional, 2017.
-- 参考 https://github.com/CyC2018/CS-Notes 并加以扩展
+* Eckel B. Java 编程思想\[M\]. 机械工业出版社, 2002.
+* Bloch J. Effective java\[M\]. Addison-Wesley Professional, 2017.
+* 参考 [https://github.com/CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes) 并加以扩展
 
+## _JavaEE_
 
-# *JavaEE*
-## `基础语法`
-### 类
-### 接口
-### 数组
-### 方法重载
-### 方法重写
-### 面向对象
-### 常用包
-### IO
-https://juejin.im/post/5af79bcc51882542ad771546
-https://www.ibm.com/developerworks/cn/java/j-lo-javaio/index.html
-### 多线程
-### 反射机制
-### 泛型
-### 集合框架
-### 异常处理
-### JAVA8新特性
-### JAVA8新特性
+### `基础语法`
 
-## 面试题
+#### 类
+
+#### 接口
+
+#### 数组
+
+#### 方法重载
+
+#### 方法重写
+
+#### 面向对象
+
+#### 常用包
+
+#### IO
+
+[https://juejin.im/post/5af79bcc51882542ad771546](https://juejin.im/post/5af79bcc51882542ad771546) [https://www.ibm.com/developerworks/cn/java/j-lo-javaio/index.html](https://www.ibm.com/developerworks/cn/java/j-lo-javaio/index.html)
+
+#### 多线程
+
+#### 反射机制
+
+#### 泛型
+
+#### 集合框架
+
+#### 异常处理
+
+#### JAVA8新特性
+
+#### JAVA8新特性
+
+### 面试题
+
 * Integer和int的区别
-* String a = new String("abc");共创建了几个对象
+* String a = new String\("abc"\);共创建了几个对象
 
-## 注意点
-1. BigDecimal比较值，不要使用equals，因为0和0.00比较equals会判断false，要使用compareTo()。Compares this BigDecimal with the specified BigDecimal. Two BigDecimal objects that are equal in value but have a different scale (like 2.0 and 2.00) are considered equal by this method.
-2. String.split()在分割. |等时需要注意，因为split分割的时候使用了正则, 点需要使用\\.类处理，具体使用时百度下
-3. 邮箱校验 建议使用微软的格式规范 https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format
-```
-^[^@\s]+@[^@\s]+\.[^@\s]+$
-^ 	从字符串的开头部分开始匹配。
-[^@\s]+ 	匹配一次或多次出现的任何字符，@ 字符或空格除外。
-@ 	匹配 @ 字符。
-[^@\s]+ 	匹配一次或多次出现的任何字符，@ 字符或空格除外。
-\. 	匹配一个句点字符。
-[^@\s]+ 	匹配一次或多次出现的任何字符，@ 字符或空格除外。
-$ 	在字符串的结尾结束匹配。
-```
-4. 获取系统临时目录 File tmpdir = new File(AccessController.doPrivileged(new GetPropertyAction("java.io.tmpdir"))); AccessController.doPrivileged中断了栈检查过程，使得后续原本没有权限的代码也可以正常执行 https://blog.csdn.net/jiangtianjiao/article/details/87909065
-5. ParserConfig.getGlobalInstance().setAutoTypeSupport(true); 用于解决fastjson漏洞，防止被远程执行
+### 注意点
+
+1. BigDecimal比较值，不要使用equals，因为0和0.00比较equals会判断false，要使用compareTo\(\)。Compares this BigDecimal with the specified BigDecimal. Two BigDecimal objects that are equal in value but have a different scale \(like 2.0 and 2.00\) are considered equal by this method.
+2. String.split\(\)在分割. \|等时需要注意，因为split分割的时候使用了正则, 点需要使用\.类处理，具体使用时百度下
+3. 邮箱校验 建议使用微软的格式规范 [https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format)
+
+   ```text
+   ^[^@\s]+@[^@\s]+\.[^@\s]+$
+   ^     从字符串的开头部分开始匹配。
+   [^@\s]+     匹配一次或多次出现的任何字符，@ 字符或空格除外。
+   @     匹配 @ 字符。
+   [^@\s]+     匹配一次或多次出现的任何字符，@ 字符或空格除外。
+   \.     匹配一个句点字符。
+   [^@\s]+     匹配一次或多次出现的任何字符，@ 字符或空格除外。
+   $     在字符串的结尾结束匹配。
+   ```
+
+4. 获取系统临时目录 File tmpdir = new File\(AccessController.doPrivileged\(new GetPropertyAction\("java.io.tmpdir"\)\)\); AccessController.doPrivileged中断了栈检查过程，使得后续原本没有权限的代码也可以正常执行 [https://blog.csdn.net/jiangtianjiao/article/details/87909065](https://blog.csdn.net/jiangtianjiao/article/details/87909065)
+5. ParserConfig.getGlobalInstance\(\).setAutoTypeSupport\(true\); 用于解决fastjson漏洞，防止被远程执行
+

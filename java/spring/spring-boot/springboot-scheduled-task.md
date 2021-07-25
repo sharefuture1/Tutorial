@@ -1,4 +1,5 @@
-### SpringBoot实现定时任务的4中方式
+# SpringBoot实现定时任务的4中方式
+
 * 使用Timer
 * 使用ScheduledExecutorService
 * 使用Spring Task
@@ -7,3 +8,4 @@
   * 执行时间的配置
   * cron表达式配置
 * 整合Quartz
+
